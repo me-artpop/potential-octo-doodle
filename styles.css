@@ -1,20 +1,21 @@
 :root {
-  --desktop-dark: #1f2c39;
-  --desktop-mid: #2b3f4e;
-  --panel: rgba(24, 35, 46, 0.78);
-  --panel-strong: rgba(19, 27, 32, 0.9);
-  --panel-border: rgba(255, 255, 255, 0.12);
-  --dock-glow: rgba(124, 166, 255, 0.32);
-  --icon-bg: rgba(255, 255, 255, 0.08);
-  --icon-bg-hover: rgba(255, 255, 255, 0.14);
-  --text: #edf2f7;
-  --muted: #bac8d7;
-  --accent: #78b5ff;
-  --blue: #56a4ff;
-  --green: #68d38d;
-  --orange: #ffb75d;
-  --red: #ff6b6b;
-  --shadow: rgba(4, 8, 12, 0.38);
+  --bg-dark: #1d262f;
+  --bg-mid: #304a5e;
+  --panel: rgba(19, 24, 30, 0.84);
+  --panel-strong: rgba(12, 16, 22, 0.92);
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --panel-soft: rgba(255, 255, 255, 0.04);
+  --panel-highlight: rgba(255, 255, 255, 0.12);
+  --app-bg: rgba(255, 255, 255, 0.06);
+  --app-bg-hover: rgba(255, 255, 255, 0.12);
+  --text: #edf3ff;
+  --muted: #bad0eb;
+  --accent: #6da9ff;
+  --accent-strong: #5f8ee6;
+  --green: #67d58e;
+  --orange: #f3b55c;
+  --red: #ff7a7a;
+  --shadow: rgba(0, 0, 0, 0.28);
 }
 
 * {
@@ -26,7 +27,7 @@ html, body {
   height: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text);
-  background: linear-gradient(160deg, var(--desktop-mid) 0%, var(--desktop-dark) 100%);
+  background: linear-gradient(160deg, #273a4d 0%, #191f2b 100%);
 }
 
 body {
@@ -38,9 +39,9 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 15% 15%, rgba(78, 110, 145, 0.3), transparent 28%),
-    radial-gradient(circle at 75% 25%, rgba(129, 148, 180, 0.2), transparent 24%),
-    linear-gradient(180deg, rgba(116, 168, 196, 0.28), rgba(24, 28, 38, 0.12));
+    linear-gradient(180deg, rgba(52, 75, 98, 0.18), rgba(15, 20, 28, 0.1)),
+    radial-gradient(circle at 22% 18%, rgba(123, 168, 208, 0.22), transparent 22%),
+    radial-gradient(circle at 74% 28%, rgba(168, 194, 230, 0.18), transparent 20%);
 }
 
 .taskbar {
@@ -48,42 +49,43 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 72px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 12px 0 10px;
-  background: linear-gradient(180deg, rgba(28, 39, 49, 0.82), rgba(13, 16, 22, 0.96));
+  background: linear-gradient(180deg, rgba(27, 33, 39, 0.9), rgba(13, 17, 22, 0.95));
   border-top: 1px solid var(--panel-border);
-  box-shadow: 0 -8px 22px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 -8px 18px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
 }
 
-.dock-left,
-.dock-right {
+.panel-left,
+.panel-right {
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-.dock-left {
+.panel-left {
   gap: 12px;
 }
 
 .start-button {
-  height: 48px;
-  min-width: 132px;
+  height: 38px;
+  min-width: 126px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 0 18px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  background: linear-gradient(180deg, rgba(76, 124, 207, 0.8), rgba(39, 80, 150, 0.9));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 6px 14px rgba(8, 12, 20, 0.18);
+  gap: 8px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(28, 104, 185, 0.9), rgba(30, 69, 122, 0.9));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 5px 10px rgba(12, 20, 28, 0.15);
   color: white;
   font-weight: 700;
+  font-size: 0.82rem;
   letter-spacing: 0.02em;
   cursor: pointer;
   transition: transform 0.18s ease, filter 0.18s ease;
@@ -94,18 +96,43 @@ body {
   filter: brightness(1.06);
 }
 
-.start-mark {
-  display: inline-flex;
-  width: 20px;
-  height: 20px;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.15);
+.debian-mark {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f6d45b, #d96a05);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.18);
 }
 
-.app-stack {
+.debian-mark::before,
+.debian-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+
+.debian-mark::before {
+  transform: scale(0.72);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.debian-ring {
+  position: absolute;
+  inset: 3px;
+  border: 2px solid rgba(255, 255, 255, 0.76);
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  transform: rotate(20deg);
+}
+
+.start-label {
+  white-space: nowrap;
+}
+
+.dock {
   display: flex;
   align-items: flex-end;
   gap: 10px;
@@ -115,48 +142,47 @@ body {
 
 .app-button {
   position: relative;
-  width: 52px;
-  height: 52px;
+  width: 42px;
+  height: 42px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  background: var(--app-bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
   cursor: pointer;
-  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+  transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
 }
 
 .app-button svg {
-  width: 38px;
-  height: 38px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
+  width: 30px;
+  height: 30px;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.22));
 }
 
 .app-button:hover {
-  transform: translateY(-4px);
-  background: var(--icon-bg-hover);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+  background: var(--app-bg-hover);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .app-button.active {
-  background: rgba(120, 181, 255, 0.12);
-  box-shadow: inset 0 0 0 1px rgba(120, 181, 255, 0.4), 0 8px 18px rgba(18, 52, 78, 0.2);
+  background: rgba(109, 169, 255, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(109, 169, 255, 0.38), 0 6px 12px rgba(8, 13, 24, 0.12);
 }
 
 .indicator {
   position: absolute;
   left: 50%;
-  bottom: 4px;
-  width: 7px;
-  height: 7px;
+  bottom: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: #dfeaf7;
+  background: rgba(233, 242, 255, 0.95);
+  box-shadow: 0 0 0 1px rgba(8, 12, 16, 0.2);
   transform: translateX(-50%);
   opacity: 0;
-  box-shadow: 0 0 0 2px rgba(15, 22, 26, 0.15);
 }
 
 .app-button.running .indicator,
@@ -165,26 +191,25 @@ body {
 }
 
 .app-button.cool {
-  background: linear-gradient(180deg, rgba(99, 113, 214, 0.2), rgba(56, 74, 150, 0.18));
+  background: linear-gradient(180deg, rgba(92, 104, 200, 0.12), rgba(48, 62, 144, 0.12));
 }
 
 .app-button.cool svg {
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
 }
 
-.dock-right {
-  gap: 14px;
-  padding-left: 6px;
+.panel-right {
+  gap: 10px;
 }
 
-.system-tray {
+.tray {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  height: 32px;
   padding: 0 10px;
-  height: 40px;
-  border-radius: 12px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -193,7 +218,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 13px;
   color: var(--muted);
   opacity: 0.9;
 }
@@ -204,60 +229,44 @@ body {
   align-items: center;
   justify-content: center;
   min-width: 110px;
-  padding: 0 12px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .clock-date {
-  font-size: 10px;
+  font-size: 9px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
 .clock-time {
-  font-size: 17px;
-  line-height: 1.2;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
 }
 
 .show-desktop {
-  position: relative;
   width: 18px;
-  height: 24px;
+  height: 20px;
   border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 6px;
+  border-radius: 4px;
   background: rgba(255, 255, 255, 0.04);
+  position: relative;
   cursor: pointer;
   padding: 0;
-  overflow: hidden;
 }
 
-.show-desktop span {
+.desktop-pill {
   position: absolute;
-  display: block;
-  width: 5px;
-  height: 5px;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 1px;
-}
-
-.show-desktop span:nth-child(1) {
-  left: 3px;
-  top: 3px;
-}
-
-.show-desktop span:nth-child(2) {
-  left: 10px;
-  top: 3px;
-}
-
-.show-desktop span:nth-child(3) {
-  left: 3px;
-  top: 10px;
+  inset: 3px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.2), rgba(255,255,255,0.06));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
 }
 
 .show-desktop:hover {
@@ -266,18 +275,26 @@ body {
 
 @media (max-width: 780px) {
   .taskbar {
-    padding: 0 8px;
-    height: 64px;
+    height: 52px;
+    padding-right: 8px;
   }
 
   .start-button {
-    min-width: 98px;
-    font-size: 0.9rem;
+    min-width: 96px;
+    padding: 0 10px;
+  }
+
+  .start-label {
+    display: none;
   }
 
   .app-button {
-    width: 46px;
-    height: 46px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .dock {
+    gap: 7px;
   }
 
   .clock {

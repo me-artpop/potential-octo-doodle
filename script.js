@@ -22,11 +22,11 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 30000);
 
-const buttons = document.querySelectorAll('.app-button');
+const appButtons = document.querySelectorAll('.app-button');
 
-buttons.forEach((button) => {
+appButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    buttons.forEach((item) => item.classList.remove('active'));
+    appButtons.forEach((item) => item.classList.remove('active'));
     button.classList.add('active');
   });
 });
