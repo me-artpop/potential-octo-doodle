@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XFCE Dock Mockup</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="desktop" aria-label="Desktop wallpaper"></div>
+
+    <div class="taskbar" aria-label="Application dock and system tray">
+      <div class="dock-left">
+        <button class="start-button" aria-label="Open start menu">
+          <span class="start-mark">▣</span>
+          <span>Debian</span>
+        </button>
+
+        <div class="app-stack" aria-label="Pinned applications">
+          <button class="app-button running active" aria-label="Browser">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="8" y="11" width="48" height="42" rx="8" fill="#3a9df8"/>
+              <circle cx="32" cy="32" r="15" fill="none" stroke="#f3f7ff" stroke-width="3"/>
+              <path d="M17 32H47M32 17C27 24 24 28 24 32C24 36 27 40 32 47C37 40 40 36 40 32C40 28 37 24 32 17Z" fill="none" stroke="#f3f7ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 24C22 24 25 18 32 18C39 18 43 24 48 24" fill="none" stroke="#f3f7ff" stroke-width="3" stroke-linecap="round"/>
+              <path d="M16 40C22 40 25 46 32 46C39 46 43 40 48 40" fill="none" stroke="#f3f7ff" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <span class="indicator" aria-hidden="true"></span>
+          </button>
+
+          <button class="app-button running" aria-label="File manager">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M9 24L17 18H29L37 24H54C56 24 58 26 58 28V46C58 48 56 50 54 50H10C8 50 6 48 6 46V26C6 24 8 24 9 24Z" fill="#f3c14b"/>
+              <path d="M8 23L17 15H29L37 23H8Z" fill="#f5d98f"/>
+              <path d="M8 33H55V46C55 47 54 48 53 48H10C9 48 8 47 8 46V33Z" fill="#ffd76a"/>
+              <path d="M18 29H46" stroke="#bf7e10" stroke-width="3" stroke-linecap="round"/>
+              <path d="M14 36H50" stroke="#bf7e10" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <span class="indicator" aria-hidden="true"></span>
+          </button>
+
+          <button class="app-button" aria-label="Settings">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="11" fill="#7c7d88"/>
+              <circle cx="32" cy="32" r="5" fill="#dfe5ef"/>
+              <g stroke="#7c7d88" stroke-width="4" stroke-linecap="round">
+                <path d="M32 8V16"/>
+                <path d="M32 48V56"/>
+                <path d="M8 32H16"/>
+                <path d="M48 32H56"/>
+                <path d="M15 15L21 21"/>
+                <path d="M43 43L49 49"/>
+                <path d="M15 49L21 43"/>
+                <path d="M43 21L49 15"/>
+              </g>
+            </svg>
+            <span class="indicator" aria-hidden="true"></span>
+          </button>
+
+          <button class="app-button" aria-label="App store">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M17 20H47L52 50C52 52 50 54 48 54H16C14 54 12 52 12 50L17 20Z" fill="#65c87a"/>
+              <path d="M22 20V16C22 12 25 9 29 9H35C39 9 42 12 42 16V20" fill="none" stroke="#2d7c34" stroke-width="4" stroke-linecap="round"/>
+              <path d="M19 31H45" stroke="#e8fff0" stroke-width="3" stroke-linecap="round"/>
+              <path d="M21 26L32 37L43 26" fill="none" stroke="#e8fff0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M32 37V47" stroke="#e8fff0" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="32" cy="18" r="3" fill="#e8fff0"/>
+            </svg>
+            <span class="indicator" aria-hidden="true"></span>
+          </button>
+
+          <button class="app-button" aria-label="Terminal">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="8" y="12" width="48" height="38" rx="6" fill="#2e2f35"/>
+              <path d="M18 24L28 32L18 40" fill="none" stroke="#a7f3d0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M32 40H42" stroke="#a7f3d0" stroke-width="3" stroke-linecap="round"/>
+              <rect x="12" y="50" width="40" height="4" rx="2" fill="#dedfe4" opacity="0.8"/>
+            </svg>
+            <span class="indicator" aria-hidden="true"></span>
+          </button>
+
+          <button class="app-button" aria-label="VLC media player">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="10" y="16" width="44" height="32" rx="7" fill="#f89d1e"/>
+              <path d="M22 22L42 32L22 42V22Z" fill="#fff6db"/>
+              <path d="M12 48H52" stroke="#f89d1e" stroke-width="4" stroke-linecap="round"/>
+              <path d="M18 12L24 18L18 24" fill="none" stroke="#f5c76c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M46 12L40 18L46 24" fill="none" stroke="#f5c76c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="indicator" aria-hidden="true"></span>
+          </button>
+
+          <button class="app-button cool" aria-label="Custom cool app">
+            <svg viewBox="0 0 64 64" aria-hidden="true" shape-rendering="crispEdges">
+              <rect x="10" y="10" width="44" height="44" rx="4" fill="#3d4f9c"/>
+              <rect x="17" y="17" width="30" height="18" fill="#7fc8ff"/>
+              <rect x="20" y="24" width="4" height="4" fill="#fff7d6"/>
+              <rect x="24" y="24" width="4" height="4" fill="#fff7d6"/>
+              <rect x="28" y="24" width="4" height="4" fill="#fff7d6"/>
+              <rect x="32" y="24" width="4" height="4" fill="#fff7d6"/>
+              <rect x="36" y="24" width="4" height="4" fill="#fff7d6"/>
+              <rect x="18" y="35" width="8" height="10" fill="#ffcf5c"/>
+              <rect x="38" y="35" width="8" height="10" fill="#ffcf5c"/>
+              <rect x="24" y="35" width="16" height="10" fill="#e6f7ff"/>
+              <rect x="27" y="38" width="10" height="4" fill="#3d4f9c"/>
+              <rect x="26" y="42" width="12" height="2" fill="#3d4f9c"/>
+              <rect x="14" y="14" width="36" height="3" fill="#8bd4ff"/>
+              <rect x="16" y="49" width="32" height="3" fill="#ff7a7a"/>
+            </svg>
+            <span class="indicator" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="dock-right">
+        <div class="system-tray" aria-label="System tray">
+          <span class="tray-icon audio" aria-label="Volume">◉</span>
+          <span class="tray-icon network" aria-label="Network">⌁</span>
+          <span class="tray-icon battery" aria-label="Battery">▣</span>
+        </div>
+
+        <div class="clock" aria-live="polite">
+          <div class="clock-date">Tue, Oct 22</div>
+          <div class="clock-time">10:58</div>
+        </div>
+
+        <button class="show-desktop" aria-label="Show desktop">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
